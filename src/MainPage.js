@@ -1,16 +1,33 @@
 import React from "react";
 //import React Router Link
 import { Link } from "react-router-dom";
+//import Book
+import Shelf from "./Shelf.js";
 
 class MainPage extends React.Component {
     render() {
         return(
             <div className="list-books">
             <div className="list-books-title">
-              <h1>MyReads</h1>
+                <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
-              <div>
+                <Shelf />
+            </div>
+            <div className="open-search">
+                {/* clean up links */}
+                <Link to="/search">Add a book</Link>
+            </div>
+            </div>
+        )
+    }
+}
+
+export default MainPage;
+
+{/*
+
+<div>
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
@@ -99,14 +116,5 @@ class MainPage extends React.Component {
                 </div>
                 
               </div>
-            </div>
-            <div className="open-search">
-                {/* clean up links */}
-              <Link to="/search">Add a book</Link>
-            </div>
-          </div>
-        )
-    }
-}
 
-export default MainPage;
+*/}
