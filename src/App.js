@@ -1,5 +1,6 @@
+// Used Ryan Waite's follow along found here:
+// https://www.youtube.com/watch?v=acJHkd6K5kI&list=PLKC17wty6rS1XVZbRlWjYU0WVsIoJyO3s&index=8
 import React from 'react';
-// import * as BooksAPI from './BooksAPI'
 import './App.css';
 
 // import React Router

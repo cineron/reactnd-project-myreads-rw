@@ -1,10 +1,21 @@
 import React from "react";
-//import React Router Link
+import * as BooksAPI from './BooksAPI';
 import { Link } from "react-router-dom";
-//import Book
 import Shelf from "./Shelf.js";
 
+
 class MainPage extends React.Component {
+    
+
+    
+    componentDidMount(){
+        BooksAPI.getAll()
+        .then(respBooks => {
+            console.log(respBooks)
+        })
+    }
+
+
     render() {
         return(
             <div className="list-books">
