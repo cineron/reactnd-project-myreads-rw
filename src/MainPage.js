@@ -31,7 +31,7 @@ class MainPage extends React.Component {
             <div className="list-books-content">
                 <Shelf name="currentlyReading" books={this.state.books.filter(b => b.shelf === "currentlyReading")} />
                 <Shelf name="Want To Read" books={this.state.books.filter(b => b.shelf === "wantToRead")} />
-                <Shelf name="Read" books={this.state.books.filter(b => b.shelf === "Read")} />
+                <Shelf name="Read" books={this.state.books.filter(b => b.shelf === "read")} />
             </div>
             <div className="open-search">
                 {/* clean up links */}
