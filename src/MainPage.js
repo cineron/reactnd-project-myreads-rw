@@ -5,13 +5,19 @@ import Shelf from "./Shelf.js";
 
 
 class MainPage extends React.Component {
-    
+    constructor(props){
+        super(props);
+        this.state = {
+            books: []
+        }
+    }
 
-    
     componentDidMount(){
         BooksAPI.getAll()
         .then(respBooks => {
-            console.log(respBooks)
+            console.log(respBooks);
+            // Not sure I follow this logic from 32min in video
+            this.setState({books: respBooks});
         })
     }
 
@@ -23,7 +29,9 @@ class MainPage extends React.Component {
                 <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
-                <Shelf />
+                <Shelf name="currentlyReading" books={this.state.books.filter(b => b.shelf === "currentlyReading")} />
+                <Shelf name="Want To Read" books={this.state.books.filter(b => b.shelf === "wantToRead")} />
+                <Shelf name="Read" books={this.state.books.filter(b => b.shelf === "Read")} />
             </div>
             <div className="open-search">
                 {/* clean up links */}
