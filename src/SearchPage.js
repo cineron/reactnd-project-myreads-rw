@@ -38,7 +38,13 @@ class SearchPage extends React.Component {
             if(res.error) {
                 return this.setState({ results: [] });
             } else {
-                return this.setState({ results: res });
+                // return this.setState({ results: res });
+                res.forEach(b => {
+                    let f = this.state.books.filter(B => B.id === b.id);
+                    // console.log(f);
+                    
+                    
+                });
             }
         })
     }
