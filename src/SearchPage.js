@@ -18,7 +18,7 @@ class SearchPage extends React.Component {
     componentDidMount(){
         BooksAPI.getAll()
         .then(respBooks => {
-            console.log(respBooks);
+            // console.log(respBooks);
             // Not sure I follow this logic from 32min in video
             this.setState({books: respBooks});
         })
