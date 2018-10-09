@@ -34,17 +34,16 @@ class SearchPage extends React.Component {
         }
         BooksAPI.search(this.state.query.trim())
         .then(res => {
-            console.log(res);
+            // console.log(res);
             if(res.error) {
                 return this.setState({ results: [] });
             } else {
-                // return this.setState({ results: res });
                 res.forEach(b => {
                     let f = this.state.books.filter(B => B.id === b.id);
                     // console.log(f);
-                    
-                    
+                    b.shelf = f[0] ? f[0].shelf : null;    
                 });
+                return this.setState({ results: res });
             }
         })
     }
@@ -59,7 +58,7 @@ class SearchPage extends React.Component {
         });
     };
 
-    render() {
+    render(){
         return(
         <div className="search-books">
             <div className="search-books-bar">
@@ -77,7 +76,7 @@ class SearchPage extends React.Component {
             </div>
             <div className="search-books-results">
                 <ol className="books-grid">
-                    {this.state.results.map((item, key) => <Book key={key} book={item}/>)}
+                    {this.state.results.map((book, key) => <Book updateBook={this.updateBook} book={book} key={key} />)}
                 </ol>
             </div>
         </div>
