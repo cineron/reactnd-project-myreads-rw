@@ -1,6 +1,6 @@
 # MyReads Project
 
-This project is a web application that keeps tracks of books, organizing them into "shelves" of those books that have been "Read," that "Want to Read," and ones that are "Currently Reading."
+This project is a web application that keeps tracks of books, organizing them into "shelves" of those books that have been "Read," that "Want to Read," and ones that are "Currently Reading." It can be viewed [live on Netlify](https://udacity-myreads-cineron.netlify.com/).
 
 ---
 
