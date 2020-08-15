@@ -1,7 +1,7 @@
 import React from "react";
 //import React Router Link
 import { Link } from "react-router-dom";
-import Book from "./Book.js";
+import Book from "../BOOK";
 
 class Shelf extends React.Component {
     // componentDidMount(){

@@ -1,10 +1,11 @@
 import React from "react";
-import * as BooksAPI from './BooksAPI';
+import * as BooksAPI from '../../APIS/BooksAPI';
 //import React Router Link
 import { Link } from "react-router-dom";
-import Book from "./Book.js";
+import { DebounceInput } from "react-debounce-input";
+import Book from "../BOOK/Book.js";
 
-class SearchPage extends React.Component {
+class Search extends React.Component {
 
     constructor(props){
         super(props);
@@ -68,9 +69,14 @@ class SearchPage extends React.Component {
                 >Close</Link>
                 <div className="search-books-input-wrapper">
                 
-                    <input type="text" placeholder="Search by title or author" 
-                    value={this.state.query}
-                    onChange={(event) => this.updateQuery(event.target.value) }/>
+                    <DebounceInput 
+                        type="text" 
+                        placeholder="Search by title or author" 
+                        minLength={2}
+                        debounceTimeout={300}
+                        value={this.state.query}
+                        onChange={(event) => this.updateQuery(event.target.value) }
+                    />
 
                 </div>
             </div>
@@ -84,4 +90,4 @@ class SearchPage extends React.Component {
     }
 }
 
-export default SearchPage;
+export default Search;

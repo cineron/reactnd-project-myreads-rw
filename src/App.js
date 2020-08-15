@@ -6,9 +6,9 @@ import './App.css';
 // import React Router
 import { Route } from "react-router-dom";
 // import MainPage component
-import MainPage from "./MainPage.js";
-// import SearchPage component
-import SearchPage from "./SearchPage.js";
+import MainPage from "./COMPONENTS/MAINPAGE";
+// import Search component
+import SearchPage from "./COMPONENTS/SEARCH";
 
 class BooksApp extends React.Component {
 
